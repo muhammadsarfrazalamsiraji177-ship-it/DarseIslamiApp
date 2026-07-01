@@ -10,15 +10,15 @@ jobs:
 
     steps:
     - name: Checkout Source Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-node: '18'
+        node-version: '18'
 
     - name: Set up JDK 11
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
         java-version: '11'
@@ -33,7 +33,7 @@ jobs:
       run: cordova build android --release
 
     - name: Upload Finished APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: DarseIslami-APK
         path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
