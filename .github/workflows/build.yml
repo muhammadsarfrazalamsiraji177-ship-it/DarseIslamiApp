@@ -26,14 +26,13 @@ jobs:
     - name: Install Cordova
       run: npm install -g cordova
 
-    - name: Install Cordova AndroidX Adapter
-      run: npm install -g cordova-res cordova-androidx-patch
-
     - name: Add Android Platform
       run: cordova platform add android
 
-    - name: Patch AndroidX for Old Plugins
-      run: npx cordova-androidx-patch
+    - name: Enable AndroidX Support
+      run: |
+        echo "android.useAndroidX=true" >> platforms/android/gradle.properties
+        echo "android.enableJetifier=true" >> platforms/android/gradle.properties
 
     - name: Build Android APK
       run: cordova build android --release
