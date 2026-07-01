@@ -44,5 +44,5 @@ jobs:
     - name: Upload Finished APK
       uses: actions/upload-artifact@v4
       with:
-        name: DarseIslami-APK
-        path: "**/build/outputs/apk/**/*.apk"
+        name: DarseIslami-Android-Files
+        path: platforms/android/app/build/outputs/
