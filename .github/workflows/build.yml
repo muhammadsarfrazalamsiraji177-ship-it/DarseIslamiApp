@@ -45,4 +45,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: DarseIslami-APK
-        path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+        path: "**/build/outputs/apk/**/*.apk"
