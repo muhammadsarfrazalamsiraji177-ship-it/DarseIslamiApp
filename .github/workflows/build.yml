@@ -29,6 +29,10 @@ jobs:
     - name: Add Android Platform
       run: cordova platform add android
 
+    - name: Fix AdMob Support Annotation Error
+      run: |
+        sed -i 's/import android.support.annotation.NonNull;/import androidx.annotation.NonNull;/g' platforms/android/app/src/main/java/name/ratson/cordova/admob/AdMob.java
+
     - name: Enable AndroidX Support
       run: |
         echo "android.useAndroidX=true" >> platforms/android/gradle.properties
